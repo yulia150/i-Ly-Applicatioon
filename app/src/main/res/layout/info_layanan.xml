@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="40dp"
+    android:layout_marginLeft="16dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:text="Jam Layanan :"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Senin s.d Kamis: 07:30 -19:00 WIB"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jumat : 07:30 -19:30 WIB"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sabtu : 08:00 -12:00 WIB"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minggu dan Hari Libur Nasional : TUTUP"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:paddingBottom="10dp"
+        android:text="Alamat :"
+        android:textSize="14sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kampus UPN Veteran Jakarta"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gedung DR. Soetomo Lt. 3 dan Lt. 4"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No. Telepon: 021-75902835"
+        android:textSize="12sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="E-Mail :  library@upnvj.ac.id"
+        android:textSize="12sp"/>
+
+</LinearLayout>

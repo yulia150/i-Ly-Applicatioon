@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:paddingTop="16dp">
+
+    <Button
+        android:id="@+id/status_buka"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="BUKA"
+        android:textSize="12sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:enabled="false"/>
+
+    <Button
+        android:id="@+id/status_tutup"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:text="TUTUP"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:enabled="false"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
