@@ -7,39 +7,89 @@
     android:layout_height="match_parent"
     tools:context=".QRCodeActivity">
 
-    <!--We are using this image
-        view to display our QR code-->
-    <ImageView
-        android:id="@+id/idIVQrcode"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/qr_code" />
-
-    <!--Edit text to enter text
-        for creating a QR code-->
-    <EditText
-        android:id="@+id/idEdt"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idIVQrcode"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:autofillHints=""
-        android:hint="@string/enter_your_info"
-        android:inputType="text" />
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <!--Button for creating a QR code-->
-    <Button
-        android:id="@+id/idBtnGenerateQR"
-        android:layout_width="match_parent"
+        <include
+            android:id="@+id/back_button"
+            layout="@layout/back_button"/>
+        <include
+            android:id="@+id/nav_menu"
+            layout="@menu/nav_menu"/>
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="QR CODE"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+
+        <?xml version="1.0" encoding="utf-8"?>
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".QRCodeActivity">
+
+            <!--We are using this image
+                view to display our QR code-->
+            <ImageView
+                android:id="@+id/idIVQrcode"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:contentDescription="@string/qr_code" />
+
+            <!--Edit text to enter text
+                for creating a QR code-->
+            <EditText
+                android:id="@+id/idEdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idIVQrcode"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:autofillHints=""
+                android:hint="@string/enter_your_info"
+                android:inputType="text" />
+
+            <!--Button for creating a QR code-->
+            <Button
+                android:id="@+id/idBtnGenerateQR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idEdt"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/generate_qr_code" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idEdt"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/generate_qr_code" />
+        android:id="@+id/nav_bottom"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:menu="@menu/nav_bottom_menu"
+        app:labelVisibilityMode="selected"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
