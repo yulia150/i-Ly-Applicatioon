@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignInActivity"
+    android:layout_margin="16dp">
+
+    <ImageView
+        android:id="@+id/img_logo_signin"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_logo"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:id="@+id/tv_halo_sigin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/img_logo_signin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Halo"
+        android:textStyle="bold"
+        android:textSize="70sp"/>
+    <TextView
+        android:id="@+id/tv_ket_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_halo_sigin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Masuk menggunakan akun yang telah terdaftar"
+        android:textSize="12sp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/email_signin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_ket_signin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp">
+        <EditText
+            android:id="@+id/edt_email_signin"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:inputType="textEmailAddress"
+            android:text="Email Address"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/password_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/email_signin"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="5dp">
+        <EditText
+            android:id="@+id/edt_Password_signin"
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:inputType="textPassword"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Passowrod"
+            android:textSize="12sp"
+            />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/password_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Lupa kata sandi?"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/blue"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/forgot_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/orange"
+        android:layout_marginTop="30dp">
+        <Button
+            android:layout_width="330dp"
+            android:layout_height="50dp"
+            android:text="MASUK"
+            android:background="@color/orange"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/login_with_google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        android:text="Masuk menggunakan akun google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/blue"
+        android:textStyle="italic"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:clickable="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/login_with_google"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Belum punya akun? "
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/sigin_to_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daftar"
+            android:textSize="16sp"
+            android:textColor="@color/blue"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
