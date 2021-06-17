@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name"></string>
+    <string name="isi_deskripsi">Peranan perpustakaan di dalam pendidikan amatlah penting, yaitu untuk membantu terselenggaranya pendidikan dengan baik. maka dari itu Kampus UPNVJ menyediakan beberapa fasilitas yang nyaman untuk para Mahasiswa dalam mencari referensi dan berdiskusi. selain itu, pusat perpustakaan ini memiliki ruangan Hotspot untuk para Mahasiswa dapat mencari referensi memalui internet.</string>
+    <string name="isi_alamat">Kampus UPN Veteran Jakarta Gedung DR. Soetomo Lt. 3 dan Lt. 4 Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450 No. Telepon: 021-75902835 E-Mail : library@upnvj.ac.id</string>
+    <string name="isi_jamlayanan"><![CDATA[Jam Buka Layanan UPT. Perpustakaan Adalah Sebagai Berikut: Senin s.d Kamis: 07:30 -19:00 WIB Jum\'at : 07:30 -19:30 WIB Sabtu : 08:00 -12:00 WIB Minggu & Hari Libur Nasional : TUTUP]]></string>
 </resources>
