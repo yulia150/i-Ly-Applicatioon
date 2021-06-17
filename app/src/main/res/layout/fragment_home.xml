@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Park Seo Joon"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <include
+            android:id="@+id/calendarView"
+            layout="@layout/calendar"/>
+        <include
+            android:id="@+id/status_buka_tutup"
+            layout="@layout/open_close_status"/>
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <include
+                android:id="@+id/info_menu"
+                layout="@layout/recycler_menu"
+                />
+
+        </HorizontalScrollView>
+
+
+        <include
+            android:id="@+id/info_layanan"
+            layout="@layout/info_layanan"/>
+    </LinearLayout>
+
+</FrameLayout>
