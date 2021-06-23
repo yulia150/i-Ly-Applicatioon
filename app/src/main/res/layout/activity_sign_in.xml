@@ -35,56 +35,45 @@
         android:text="Masuk menggunakan akun yang telah terdaftar"
         android:textSize="12sp"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/email_signin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+    <EditText
+        android:id="@+id/edt_email_signin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/edt_txt_shape"
+        android:shadowColor="@color/black"
+        android:inputType="textEmailAddress"
+        android:text="Email Address"
+        android:textSize="12sp"
+        android:paddingLeft="20dp"
         app:layout_constraintTop_toBottomOf="@id/tv_ket_signin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="40dp"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="5dp">
-        <EditText
-            android:id="@+id/edt_email_signin"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
-            android:inputType="textEmailAddress"
-            android:text="Email Address"
-            android:textSize="12sp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            />
-    </androidx.cardview.widget.CardView>
+        android:layout_marginRight="10dp"/>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/password_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/email_signin"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <EditText
+        android:id="@+id/edt_Password_signin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="textPassword"
+        android:layout_marginTop="16dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/edt_txt_shape"
+        android:shadowColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/edt_email_signin"
         app:layout_constraintStart_toStartOf="parent"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="5dp">
-        <EditText
-            android:id="@+id/edt_Password_signin"
-            android:layout_width="330dp"
-            android:layout_height="50dp"
-            android:inputType="textPassword"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Passowrod"
-            android:textSize="12sp"
-            />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Passoword"
+        android:textSize="12sp"
+        />
 
     <TextView
         android:id="@+id/forgot_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/password_login"
+        app:layout_constraintTop_toBottomOf="@id/edt_Password_signin"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Lupa kata sandi?"
         android:textStyle="italic"
@@ -93,28 +82,22 @@
         android:textColor="@color/blue"/>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/forgot_password"
-        app:layout_constraintStart_toStartOf="parent"
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="@color/orange"
-        android:layout_marginTop="30dp">
-        <Button
-            android:layout_width="330dp"
-            android:layout_height="50dp"
-            android:text="MASUK"
-            android:background="@color/orange"/>
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgot_password"
+        android:text="MASUK"
+        android:background="@drawable/btn_shape"/>
 
     <TextView
         android:id="@+id/login_with_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
         android:text="Masuk menggunakan akun google"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -146,5 +129,16 @@
             android:textColor="@color/blue"/>
 
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="20dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

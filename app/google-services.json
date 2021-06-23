@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "278834513270",
+    "firebase_url": "https://i-ly-application-default-rtdb.firebaseio.com",
     "project_id": "i-ly-application",
     "storage_bucket": "i-ly-application.appspot.com"
   },
@@ -10,6 +11,64 @@
         "mobilesdk_app_id": "1:278834513270:android:5e91ae3a5db78cfa92e657",
         "android_client_info": {
           "package_name": "com.example.ilyapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278834513270-gkq6g4ee3sb6iq6fs08dabktoucaeb7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMp8yN1EbChJ5xzOHFwUKzVk2BVMm2OJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278834513270-gkq6g4ee3sb6iq6fs08dabktoucaeb7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278834513270:android:d312e12e0989c16592e657",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "278834513270-gkq6g4ee3sb6iq6fs08dabktoucaeb7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMp8yN1EbChJ5xzOHFwUKzVk2BVMm2OJY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "278834513270-gkq6g4ee3sb6iq6fs08dabktoucaeb7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278834513270:android:b62765e611a2fc9992e657",
+        "android_client_info": {
+          "package_name": "com.example.qrcode"
         }
       },
       "oauth_client": [

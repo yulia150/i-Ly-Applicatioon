@@ -16,6 +16,7 @@
             android:src="@drawable/ic_nim"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/nim_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1810511025"
@@ -34,6 +35,7 @@
             android:src="@drawable/ic_profile"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/name_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Park seun woo"
@@ -53,6 +55,7 @@
             android:src="@drawable/ic_jurusan"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/prodi_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -72,6 +75,7 @@
             android:src="@drawable/ic_fakultas"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/fakultas_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ilmu Komputer"
@@ -90,6 +94,7 @@
             android:src="@drawable/ic_email"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/email_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="yuliyastutik1@gmail.com"
@@ -108,6 +113,7 @@
             android:src="@drawable/ic_phone"
             android:background="@color/white"/>
         <TextView
+            android:id="@+id/tlp_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="085735280170"
