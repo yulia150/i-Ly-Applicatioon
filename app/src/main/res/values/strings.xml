@@ -6,4 +6,6 @@
     <string name="enter_your_info">Enter your info</string>
     <string name="generate_qr_code">Generate QR Code</string>
     <string name="auth_failed">Authentication failed, check your email and password or sign up</string>
+    <string name="isi_deskripsi">Kampus UPNVJ menyediakan beberapa fasilitas yang nyaman untuk para Mahasiswa dalam mencari referensi dan berdiskusi. selain itu, pusat perpustakaan ini memiliki ruangan Hotspot untuk para Mahasiswa dapat mencari referensi memalui internet.</string>
+    <string name="alamat">Jl. R.S. Fatmawati Pondok Labu - Jakarta Selatan 12450.Kampus UPN Veteran Jakarta.Gedung DR. Soetomo Lt.3 dan Lt.4</string>
 </resources>

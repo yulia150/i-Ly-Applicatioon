@@ -73,6 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="number"
+                        android:hint="1810511450"
                         android:textSize="12sp"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
@@ -107,7 +108,7 @@
                         android:id="@+id/edt_txt_add_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:hint="Sandi Handi"
                         android:textSize="12sp"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
@@ -143,6 +144,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress"
+                        android:hint="sandihandi@gmail.com"
                         android:textSize="12sp"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
@@ -178,6 +180,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
+                        android:hint="Ilmu Komputer"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
@@ -213,6 +216,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="12sp"
+                        android:hint="Informatika"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>
@@ -246,6 +250,7 @@
                         android:id="@+id/edt_txt_add_telephone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:hint="0894567823"
                         android:textSize="12sp"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
@@ -281,6 +286,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
+                        android:hint="Password"
                         android:textSize="12sp"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
@@ -303,7 +309,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="5dp"
                     android:layout_below="@id/password"
                     android:background="@drawable/edt_txt_shape">
                     <ImageView
@@ -318,6 +324,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
                         android:textSize="12sp"
+                        android:hint="Password"
                         android:layout_marginLeft="10dp"
                         android:layout_gravity="center_vertical"/>
                 </LinearLayout>

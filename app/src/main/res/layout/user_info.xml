@@ -52,7 +52,7 @@
             android:layout_width="40dp"
             android:layout_height="20dp"
             android:paddingLeft="10dp"
-            android:src="@drawable/ic_jurusan"
+            android:src="@drawable/ic_prodi"
             android:background="@color/white"/>
         <TextView
             android:id="@+id/prodi_profile"
