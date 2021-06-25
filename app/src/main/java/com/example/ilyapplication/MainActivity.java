@@ -1,22 +1,34 @@
 package com.example.ilyapplication;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth mAuth;
+    private String email;
 
+    @Override
+    protected void onStart() {
+        Fragment fragment = new HomeFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
+        super.onStart();
+    }
     private BottomNavigationView.OnNavigationItemSelectedListener navigation =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -38,10 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView btnNav = findViewById(R.id.nav_bottom);
         btnNav.setOnNavigationItemSelectedListener(navigation);
@@ -66,13 +82,20 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             return true;
         }else if(id==R.id.nav_logout){
-            logout();
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            try {
+                mAuth.signOut();
+                Toast.makeText(this, "User Sign out!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, SignInActivity.class));
+            }catch (Exception e) {
+
+            }
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
 
     public void logout(){
-        mFirebaseAuth.signOut();
+        mAuth.signOut();
     }
 }

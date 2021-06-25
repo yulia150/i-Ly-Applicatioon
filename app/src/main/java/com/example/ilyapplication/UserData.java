@@ -17,6 +17,7 @@ public class UserData {
 
     }
 
+
     public String getNim() {
         return nim;
     }

@@ -19,7 +19,7 @@
             android:id="@+id/nim_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1810511025"
+            android:text=""
             android:paddingTop="5dp"/>
 
     </LinearLayout>
@@ -38,7 +38,7 @@
             android:id="@+id/name_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Park seun woo"
+            android:text=""
             android:paddingTop="5dp"/>
 
     </LinearLayout>
@@ -59,7 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:text="Informatika"
+            android:text=""
             android:paddingTop="5dp"/>
 
     </LinearLayout>
@@ -78,7 +78,7 @@
             android:id="@+id/fakultas_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ilmu Komputer"
+            android:text=""
             android:paddingTop="5dp"/>
 
     </LinearLayout>
@@ -97,7 +97,7 @@
             android:id="@+id/email_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="yuliyastutik1@gmail.com"
+            android:text=""
             android:paddingTop="5dp"/>
 
     </LinearLayout>
@@ -116,7 +116,7 @@
             android:id="@+id/tlp_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="085735280170"
+            android:text=""
             android:paddingTop="5dp"/>
     </LinearLayout>
 

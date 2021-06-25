@@ -1,8 +1,12 @@
 package com.example.ilyapplication;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,6 +25,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
@@ -37,7 +43,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     //login with google
     private GoogleSignInClient mGoogleSignInClient;
-    private int RC_SIGN_IN = 1;
+    private int RC_SIGN_IN = 100;
+    private static final String TAG = "GOOGLE_SIGN_IN_TAG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
+
+        //check user sudah login atau belum
+//        if (mAuth.getCurrentUser() != null) {
+//            updateUI(mAuth.getCurrentUser());
+//        }
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -54,8 +66,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         forgotPassword = findViewById(R.id.forgot_password);
         forgotPassword.setOnClickListener(this);
-        loginGoogle = findViewById(R.id.login_with_google);
-        loginGoogle.setOnClickListener(this);
+
         regist = findViewById(R.id.sigin_to_regist);
         regist.setOnClickListener(this);
 
@@ -67,8 +78,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         progressBar = findViewById(R.id.progressBar);
 
-    }
+        loginGoogle = findViewById(R.id.btn_loginGoogle);
+        loginGoogle.setOnClickListener(this);
 
+    }
+    //process login
     private void login(){
         String email = edtEmail.getText().toString();
         final String password = edtpassword.getText().toString();
@@ -87,9 +101,6 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 .addOnCompleteListener(SignInActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         progressBar.setVisibility(View.GONE);
                         if (!task.isSuccessful()) {
                             // there was an error
@@ -99,6 +110,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                 Toast.makeText(SignInActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                             }
                         } else {
+
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();
@@ -112,60 +124,44 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
-    private void handleSignInResult(Task<GoogleSignInAccount> completedTask){
-        try{
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RC_SIGN_IN){
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+//            handleSignInResult(task);
+            try {
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+                FirebaseGoogleAuth(account.getIdToken());
+            }catch (Exception e){
+                Log.d(TAG, "onActivityForResult: " + e.getMessage());
 
-            GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
-            Toast.makeText(SignInActivity.this,"Signed In Successfully",Toast.LENGTH_SHORT).show();
-            FirebaseGoogleAuth(acc);
-        }
-        catch (ApiException e){
-            Toast.makeText(SignInActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
-            FirebaseGoogleAuth(null);
+            }
         }
     }
 
-    private void FirebaseGoogleAuth(GoogleSignInAccount acct) {
+    private void FirebaseGoogleAuth(String idToken) {
         //check if the account is null
-        if (acct != null) {
-            AuthCredential authCredential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
+            AuthCredential authCredential = GoogleAuthProvider.getCredential(idToken, null);
             mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Toast.makeText(SignInActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithCredential:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        updateUI(user);
-
+                        startActivity(new Intent(SignInActivity.this, MainActivity.class));
                     } else {
-                        Toast.makeText(SignInActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                        updateUI(null);
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "signInWithCredential:failure", task.getException());
+
                     }
                 }
             });
-        }
-        else{
-            Toast.makeText(SignInActivity.this, "acc failed", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    private void updateUI(FirebaseUser fUser){
-        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-        if(account !=  null){
-            String personName = account.getDisplayName();
-            String personGivenName = account.getGivenName();
-            String personFamilyName = account.getFamilyName();
-            String personEmail = account.getEmail();
-            String personId = account.getId();
-            Uri personPhoto = account.getPhotoUrl();
-
-            Toast.makeText(SignInActivity.this,personName + personEmail ,Toast.LENGTH_SHORT).show();
-        }
 
     }
 
 
-    //on click
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -174,8 +170,39 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 startActivity(intent);
                 break;
             case R.id.forgot_password:
+                EditText mailReset = new EditText(v.getContext());
+                final AlertDialog.Builder resetPasswordDialog = new AlertDialog.Builder(v.getContext());
+                resetPasswordDialog.setTitle("Do you want to reset your password?");
+                resetPasswordDialog.setMessage("Enter Your Email to Change Your Password");
+                resetPasswordDialog.setView(mailReset);
+
+                resetPasswordDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        String mail = mailReset.getText().toString();
+                        mAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(SignInActivity.this,"Open your email to change the password", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(SignInActivity.this,"Error!!", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                resetPasswordDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                resetPasswordDialog.create().show();
                 break;
-            case R.id.login_with_google:
+            case R.id.btn_loginGoogle:
                 signInWithGoogle();
                 break;
             case R.id.btn_login:

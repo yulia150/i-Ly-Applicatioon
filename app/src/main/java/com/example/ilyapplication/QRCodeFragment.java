@@ -34,6 +34,7 @@ public class QRCodeFragment extends Fragment implements View.OnClickListener {
     private Button generateQrBtn;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
+    int i = 0;
 
     public QRCodeFragment() {
         // Required empty public constructor
@@ -92,6 +93,7 @@ public class QRCodeFragment extends Fragment implements View.OnClickListener {
                 // the bitmap is set inside our image
                 // view using .setimagebitmap method.
                 qrCodeIV.setImageBitmap(bitmap);
+
             } catch (WriterException e) {
                 // this method is called for
                 // exception handling.
@@ -99,4 +101,5 @@ public class QRCodeFragment extends Fragment implements View.OnClickListener {
             }
         }
     }
+
 }

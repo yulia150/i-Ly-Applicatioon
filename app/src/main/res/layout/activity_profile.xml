@@ -18,10 +18,15 @@
         android:paddingTop="16dp"
         android:orientation="vertical">
 
-        <include
+        <ImageButton
+            android:background="@drawable/edt_txt_shape"
             android:id="@+id/btn_back"
-            layout="@layout/back_button"/>
-        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:layout_centerVertical="true"
+            android:padding="7dp"/>
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -30,28 +35,31 @@
                 android:id="@+id/profile_pic"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_profile_pic"
+                android:src="@drawable/ic_profile_default"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="2dp"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:paddingLeft="90dp"
                 android:orientation="vertical">
                 <TextView
                     android:id="@+id/name_for_profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Park Hyun Soo"
+                    android:text=""
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginTop="16dp"/>
                 <Button
-                    android:layout_width="80dp"
+                    android:id="@+id/btn_change_profile"
+                    android:layout_width="130dp"
                     android:layout_height="40dp"
-                    android:text="String"/>
+                    android:text="change photo"
+                    android:textSize="12sp"/>
             </LinearLayout>
-        </LinearLayout>
+        </FrameLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -61,6 +69,7 @@
                 android:id="@+id/user_profile_info"
                 layout="@layout/user_info" />
             <LinearLayout
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -71,6 +80,7 @@
                     android:layout_height="40dp"
                     android:src="@drawable/ic_logout"/>
                 <TextView
+                    android:id="@+id/btn_logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Logout"

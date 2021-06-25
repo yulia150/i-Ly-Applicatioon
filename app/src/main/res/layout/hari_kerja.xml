@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal"
+    android:elevation="5dp">
+    <LinearLayout
+        android:background="@layout/relativelayout_radius_border"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:backgroundTint="#562297FF">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_filter1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="Senin-Kamis"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="07:30 -19:00"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@layout/relativelayout_radius_border"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:backgroundTint="#3700BCD4"
+        android:layout_marginLeft="15dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_filter2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="Jumat"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="07:30 -19:30"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@layout/relativelayout_radius_border"
+        android:layout_width="110dp"
+        android:layout_height="120dp"
+        android:orientation="vertical"
+        android:backgroundTint="#2CFFC107"
+        android:layout_marginLeft="15dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_filter3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="Sabtu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textSize="12dp"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="08:00 -12:00"
+            android:layout_alignParentBottom="true"/>
+    </LinearLayout>
+
+</LinearLayout>
