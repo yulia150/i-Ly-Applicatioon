@@ -29,12 +29,10 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    private FirebaseDatabase fDatabase;
+
     private DatabaseReference dbReference;
     private FirebaseUser firebaseUser;
     private String userID;
-    private List<Absen> absen = new ArrayList<Absen>();
-    int i=0;
     String jml;
     Button buka, tutup;
     FirebaseAuth mAuth;

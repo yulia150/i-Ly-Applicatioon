@@ -21,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private String email;
 
     @Override
     protected void onStart() {
@@ -77,11 +76,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
+        //move to profile
         if (id==R.id.nav_profile){
             Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(intent);
             return true;
-        }else if(id==R.id.nav_logout){
+        }
+        //account logout
+        else if(id==R.id.nav_logout){
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             try {
                 mAuth.signOut();
@@ -95,7 +97,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void logout(){
-        mAuth.signOut();
-    }
 }

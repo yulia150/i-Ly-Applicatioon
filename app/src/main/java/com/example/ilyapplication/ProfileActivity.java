@@ -122,16 +122,19 @@ public class ProfileActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //apabila klik button back
             case R.id.btn_back:
                 Intent intent = new Intent(ProfileActivity.this, MainActivity.class);
                 startActivity(intent);
                 break;
+                //apabila klik button change profile
             case R.id.btn_change_profile:
                 Intent profileIntent = new Intent();
                 profileIntent.setType("image/*");
                 profileIntent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(Intent.createChooser(profileIntent, "Select Image."), PICK_IMAGE);
                 break;
+            //apabila klik button logout
             case R.id.btn_logout:
                 FirebaseAuth mAuth = FirebaseAuth.getInstance();
                 try {

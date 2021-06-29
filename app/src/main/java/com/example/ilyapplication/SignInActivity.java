@@ -52,24 +52,22 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-
-        //check user sudah login atau belum
-//        if (mAuth.getCurrentUser() != null) {
-//            updateUI(mAuth.getCurrentUser());
-//        }
-
+        //sign in using google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
+        //forgot password text
         forgotPassword = findViewById(R.id.forgot_password);
         forgotPassword.setOnClickListener(this);
 
+        //button daftar
         regist = findViewById(R.id.sigin_to_regist);
         regist.setOnClickListener(this);
 
+        //login button
         login = findViewById(R.id.btn_login);
         login.setOnClickListener(this);
 
@@ -161,7 +159,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-
+    //on click function
     @Override
     public void onClick(View v) {
         switch (v.getId()){
